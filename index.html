@@ -1,141 +1,758 @@
+```html
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software de Gestión de Humana | Control de Horas y Vacaciones Costa Rica</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <meta name="description" content="Sistema inteligente de gestión de empleados en Costa Rica: control de horas laborales, vacaciones, aguinaldo, liquidaciones, huella digital y dashboard financiero. Beta cerrada gratuita.">
-  <meta name="keywords" content="software de gestión de empleados Costa Rica,control de horas laborales,sistema de vacaciones,software RRHH Costa Rica,gestión de personal,huella digital asistencia,dashboard financiero empresas">
+<html lang="es-CR">
 
-  <meta property="og:title" content="Software de Gestión de Humana – Control de Horas y Vacaciones">
-  <meta property="og:description" content="Automatiza tu proceso de RRHH con control de horas, huella digital, dashboards financieros y más. Beta cerrada gratuita en Costa Rica.">
-  <meta property="og:type" content="website">
+<head>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDboNm-QPY7Ux4Fh66hkxlvWyTFCGxPswE",
+    authDomain: "mercedsoftware-capital-humano.firebaseapp.com",
+    projectId: "mercedsoftware-capital-humano",
+    storageBucket: "mercedsoftware-capital-humano.firebasestorage.app",
+    messagingSenderId: "57535319951",
+    appId: "1:57535319951:web:5dceb3950c2cc237fb05fa",
+    measurementId: "G-9YMCC14BJW"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- SEO PRINCIPAL -->
+  <title>
+    TallerOne | Software para Talleres Mecánicos en Costa Rica
+  </title>
+
+  <meta
+    name="description"
+    content="TallerOne es un software para talleres mecánicos en Costa Rica que permite controlar vehículos, clientes, historial vehicular, facturación y seguimiento en tiempo real. Prueba gratuita por 15 días."
+  />
+
+  <meta
+    name="keywords"
+    content="software para talleres mecánicos, sistema para talleres mecánicos, software automotriz Costa Rica, gestión vehicular, control de vehículos, historial vehicular, software para talleres en Costa Rica, sistema automotriz, dashboard para talleres, seguimiento vehicular"
+  />
+
+  <meta name="author" content="TallerOne" />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta name="language" content="Spanish" />
+
+  <meta name="theme-color" content="#0f172a" />
+
+  <meta name="geo.region" content="CR" />
+
+  <meta name="geo.placename" content="Costa Rica" />
+
+  <!-- CANONICAL -->
+  <link
+    rel="canonical"
+    href="https://tallerone.com/"
+  />
+
+  <!-- OPEN GRAPH -->
+  <meta
+    property="og:title"
+    content="TallerOne | Software para Talleres Mecánicos"
+  />
+
+  <meta
+    property="og:description"
+    content="Sistema de gestión para talleres mecánicos con control de vehículos, clientes, historial, facturación y seguimiento en tiempo real."
+  />
+
+  <meta
+    property="og:image"
+    content="https://i.ibb.co/r2RvmNpY/logo.png"
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta property="og:locale" content="es_CR" />
+
+  <meta
+    property="og:url"
+    content="https://tallerone.com/"
+  />
+
+  <!-- TWITTER SEO -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="TallerOne | Software para Talleres Mecánicos"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Software automotriz para talleres mecánicos en Costa Rica."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://i.ibb.co/r2RvmNpY/logo.png"
+  />
+
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    href="https://i.ibb.co/r2RvmNpY/logo.png"
+  />
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TallerOne",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Software para talleres mecánicos en Costa Rica con seguimiento vehicular, historial, dashboard y facturación.",
+    "image": "https://i.ibb.co/r2RvmNpY/logo.png",
+    "url": "https://tallerone.com/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "TallerOne"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Costa Rica"
+    }
+  }
+  </script>
 
   <style>
-    body {
+
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)),
-                  url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1950&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #e2e8f0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      scroll-behavior: smooth;
     }
 
-    header, section, footer {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: 40px auto;
-      background: rgba(15, 23, 42, 0.88);
-      border-radius: 14px;
+    body {
+      background: #0f172a;
+      color: white;
+      line-height: 1.7;
     }
 
-    h1, h2 {
-      text-align: center;
-      font-weight: bold;
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .center {
-      text-align: center;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
     }
 
-    .btn-primary {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 40px;
-      background: #2563eb;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav img {
+      height: 70px;
+    }
+
+    nav div {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
       font-weight: bold;
-      transition: 0.3s ease;
+      transition: .3s;
     }
 
-    .btn-primary:hover {
-      background: #1d4ed8;
-      transform: scale(1.05);
+    nav a:hover {
+      color: #38bdf8;
     }
 
-    .grid {
+    .hero {
+
+      min-height: 100vh;
+
+      background:
+      linear-gradient(rgba(15,23,42,0.88), rgba(15,23,42,0.95)),
+      url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1600&auto=format&fit=crop')
+      center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 25px;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.3rem;
+      color: #cbd5e1;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+
+      display: inline-block;
+      padding: 16px 35px;
+      background: #0ea5e9;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #0284c7;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .features {
+
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 20px;
-      margin-top: 30px;
+
+      grid-template-columns:
+      repeat(auto-fit, minmax(260px, 1fr));
+
+      gap: 25px;
     }
 
     .card {
+
       background: #1e293b;
+      border-radius: 20px;
+      padding: 35px;
+      transition: .3s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #0ea5e9;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #38bdf8;
+      font-size: 1.4rem;
+    }
+
+    .clients {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .clients img {
+
+      width: 220px;
+      background: white;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      border-radius: 20px;
+      transition: .3s;
+    }
+
+    .clients img:hover {
+      transform: scale(1.05);
+    }
+
+    .tracking {
+
+      background: #111827;
+      padding: 60px;
+      border-radius: 25px;
+      text-align: center;
+    }
+
+    .tracking a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cta {
+
+      background:
+      linear-gradient(135deg, #0284c7, #0f172a);
+
+      text-align: center;
+      padding: 90px 30px;
+      border-radius: 30px;
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 35px;
     }
 
     footer {
+
+      background: #020617;
+      padding: 50px 0;
       text-align: center;
-      font-size: 14px;
-      color: #cbd5e1;
+      color: #94a3b8;
     }
+
+    footer p {
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+    @media(max-width: 768px) {
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav div {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+
+      .tracking {
+        padding: 35px;
+      }
+
+    }
+
   </style>
+
 </head>
 
 <body>
 
-<header>
-  <h1>Software de Gestión de Humana en Costa Rica</h1>
-  <p class="center">
-    Automatiza el <strong>control de horas laborales</strong>, la <strong>gestión de vacaciones</strong>,
-    el cálculo de <strong>aguinaldo</strong> y <strong>liquidaciones</strong> con huella digital
-    y dashboards financieros para empresas modernas.
-  </p>
+  <!-- HEADER -->
 
-  <div class="center">
-    <a href="mailto:alonsorojasdelga1@gmail.com?subject=Solicitud%20Beta%20Cerrada%20Software%20RRHH" class="btn-primary">
-      Solicitar Acceso a Beta Cerrada Gratuita
-    </a>
-  </div>
+  <header>
 
-  <p class="center" style="margin-top:15px;color:#3b82f6;font-weight:bold;">
-    🚀 Beta cerrada gratuita por tiempo limitado en Costa Rica
-  </p>
-</header>
+    <div class="container">
 
-<section>
-  <h2>Registro de Asistencia con Huella Digital</h2>
-  <p class="center">
-    Sistema de registro de entrada y salida mediante <strong>huella digital</strong>
-    para un control de asistencia preciso, seguro y automatizado.
-  </p>
-</section>
+      <nav>
 
-<section>
-  <h2>Funcionalidades Principales del Software de RRHH</h2>
-  <div class="grid">
-    <div class="card"><h3>Control de Horas Laborales</h3><p>Registro automático de horas ordinarias y extraordinarias con cálculo financiero.</p></div>
-    <div class="card"><h3>Gestión de Vacaciones</h3><p>Solicitudes digitales, aprobación y control de días acumulados.</p></div>
-    <div class="card"><h3>Dashboard Financiero Empresarial</h3><p>Visualización consolidada de costos laborales por empleado.</p></div>
-    <div class="card"><h3>Cartas Disciplinarias</h3><p>Generación formal y almacenamiento de amonestaciones.</p></div>
-    <div class="card"><h3>Feedback Anónimo Corporativo</h3><p>Buzón seguro para mejorar la cultura organizacional.</p></div>
-    <div class="card"><h3>Liquidaciones Automáticas</h3><p>Cálculo legal de despidos justificados y sin responsabilidad patronal.</p></div>
-  </div>
-</section>
+        <img
+          src="https://i.ibb.co/r2RvmNpY/logo.png"
+          alt="TallerOne software para talleres mecánicos"
+        >
 
-<section>
-  <h2>Fases del Desarrollo</h2>
-  <div class="grid">
-    <div class="card"><h3>V1 – Control y Automatización</h3><p>Control de horas + vacaciones + cálculo automático de salarios.</p></div>
-    <div class="card"><h3>V2 – Aguinaldo y Liquidaciones</h3><p>Cálculo automático de aguinaldo acumulado y liquidaciones legales en Costa Rica.</p></div>
-    <div class="card"><h3>V3 – Cultura y Proyección Financiera</h3><p>Feedback anónimo, dashboards avanzados y proyección anual de aguinaldo.</p></div>
-  </div>
-</section>
+        <div>
 
-<footer>
-  <p><strong>MercedSoftware</strong> – Desarrollo de Software Empresarial en Costa Rica</p>
-  <p>Teléfono: 6205-3633 | Email: alonsorojasdelga1@gmail.com</p>
-  <p>© 2026 MercedSoftware | Software de Gestión de Humana en Costa Rica</p>
-</footer>
+          <a href="#inicio">Inicio</a>
+
+          <a href="#funciones">Funciones</a>
+
+          <a href="#clientes">Clientes</a>
+
+          <a href="#seguimiento">Seguimiento</a>
+
+          <a href="#contacto">Contacto</a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section
+    class="hero"
+    id="inicio"
+  >
+
+    <div class="container hero-content">
+
+      <h1>
+        Software para Talleres Mecánicos en Costa Rica
+      </h1>
+
+      <p>
+
+        TallerOne es un sistema de gestión vehicular diseñado para talleres mecánicos.
+        Controla vehículos, clientes, historial automotriz, facturación y seguimiento
+        en tiempo real desde una sola plataforma moderna y fácil de usar.
+
+      </p>
+
+      <a
+        href="#contacto"
+        class="btn"
+      >
+        Solicitar Prueba Gratis
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FUNCIONES -->
+
+  <section id="funciones">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Sistema de Gestión para Talleres Mecánicos
+        </h2>
+
+        <p>
+
+          Organiza completamente tu taller mecánico con herramientas enfocadas
+          en productividad, seguimiento vehicular y administración automotriz.
+
+        </p>
+
+      </div>
+
+      <div class="features">
+
+        <article class="card">
+
+          <h3>
+            🚗 Control de Vehículos
+          </h3>
+
+          <p>
+
+            Gestiona todos los vehículos ingresados al taller con control
+            completo de estado, reparación y seguimiento.
+
+          </p>
+
+        </article>
+
+        <article class="card">
+
+          <h3>
+            📚 Historial Vehicular
+          </h3>
+
+          <p>
+
+            Consulta reparaciones anteriores, mantenimientos, observaciones
+            y trabajos realizados por vehículo.
+
+          </p>
+
+        </article>
+
+        <article class="card">
+
+          <h3>
+            📍 Seguimiento en Tiempo Real
+          </h3>
+
+          <p>
+
+            Tus clientes podrán revisar el estado del vehículo sin necesidad
+            de llamar constantemente al taller.
+
+          </p>
+
+        </article>
+
+        <article class="card">
+
+          <h3>
+            🧾 Facturación Automotriz
+          </h3>
+
+          <p>
+
+            Genera facturas fácilmente y lleva un mejor control administrativo
+            del taller mecánico.
+
+          </p>
+
+        </article>
+
+        <article class="card">
+
+          <h3>
+            📊 Dashboard Inteligente
+          </h3>
+
+          <p>
+
+            Visualiza métricas importantes como vehículos activos,
+            trabajos pendientes y rendimiento operativo.
+
+          </p>
+
+        </article>
+
+        <article class="card">
+
+          <h3>
+            🌐 Portal para Clientes
+          </h3>
+
+          <p>
+
+            Página exclusiva de seguimiento para mejorar la experiencia
+            del cliente y reducir llamadas innecesarias.
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CLIENTES -->
+
+  <section id="clientes">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Talleres Mecánicos que ya usan TallerOne
+        </h2>
+
+        <p>
+
+          Talleres automotrices en Costa Rica ya utilizan nuestro software
+          para organizar su operación diaria.
+
+        </p>
+
+      </div>
+
+      <div class="clients">
+
+        <img
+          src="https://i.ibb.co/fdNhtvnc/velocar.jpg"
+          alt="Velocar usando TallerOne software para talleres mecánicos"
+          loading="lazy"
+        >
+
+        <img
+          src="https://i.ibb.co/KxpKyxzq/monaco.jpg"
+          alt="CDA Monaco utilizando sistema para talleres mecánicos"
+          loading="lazy"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TRACKING -->
+
+  <section id="seguimiento">
+
+    <div class="container">
+
+      <div class="tracking">
+
+        <h2 style="margin-bottom:20px;">
+
+          Seguimiento Vehicular Online
+
+        </h2>
+
+        <p style="margin-bottom:20px;">
+
+          Tus clientes podrán revisar el estado del vehículo
+          desde cualquier dispositivo en tiempo real.
+
+        </p>
+
+        <p>
+
+          Demo del sistema:
+
+          <a
+            href="https://autoflow-cc1f9.web.app/tracking"
+            target="_blank"
+          >
+
+            Ver página de seguimiento
+
+          </a>
+
+        </p>
+
+        <p style="margin-top:15px;">
+
+          Ingresa la placa:
+          <strong>1111</strong>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section id="contacto">
+
+    <div class="container">
+
+      <div class="cta">
+
+        <h2>
+
+          🚀 Prueba Gratis por 15 Días
+
+        </h2>
+
+        <p>
+
+          Descubre cómo TallerOne puede ayudarte a mejorar
+          la organización de tu taller mecánico,
+          ahorrar tiempo y brindar una mejor experiencia
+          a tus clientes desde el primer día.
+
+        </p>
+
+        <a
+          href="https://wa.me/50672332898"
+          class="btn"
+          target="_blank"
+        >
+
+          Contactar por WhatsApp
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+
+        TallerOne es un software para talleres mecánicos en Costa Rica
+        especializado en gestión vehicular, seguimiento de vehículos,
+        historial automotriz y facturación.
+
+      </p>
+
+      <p>
+
+        © 2026 TallerOne - Todos los derechos reservados.
+
+      </p>
+
+      <p>
+
+        Desarrollado por mercedsoftware
+
+      </p>
+
+    </div>
+
+  </footer>
 
 </body>
+
 </html>
+```
